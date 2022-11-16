@@ -71,10 +71,5 @@ function sitebarFaqs() {
       collapsible: true,
       items: [{ text: "TBD", link: "/faqs/index" }],
     },
-    {
-      text: "Title2",
-      collapsible: true,
-      items: [{ text: "TBD", link: "/faqs/index" }],
-    },
   ];
 }
