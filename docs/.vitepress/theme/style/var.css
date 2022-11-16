@@ -1,0 +1,93 @@
+body {
+  font-size: 16px;
+}
+
+/*
+ * TODO: custom light* and dark* ones
+ *
+ * ref: https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css 
+ */
+:root {
+  --vp-c-orange: #ff9900;
+  --vp-c-orange-light: #ff9900;
+  --vp-c-orange-lighter: #ff9900;
+  --vp-c-orange-dark: #ff9900;
+  --vp-c-orange-darker: #ff9900;
+
+  /* fix image background-color */
+  --vp-c-white-soft: #fff;
+
+  --vp-c-brand: var(--vp-c-orange);
+  --vp-c-brand-light: var(--vp-c-orange-light);
+  --vp-c-brand-lighter: var(--vp-c-orange-lighter);
+  --vp-c-brand-dark: var(--vp-c-orange-dark);
+  --vp-c-brand-darker: var(--vp-c-orange-darker);
+}
+
+
+/* 图片统一加圆角、边框框和间隔 */
+.vp-doc img {
+  padding: 1rem;
+  margin: 1rem 0 0 0;
+  border-radius: 1em;
+  border: 1px solid #ccc;
+  max-width: 100%;
+}
+
+/* 表内元素居中 */
+.vp-doc table {
+  display: table;
+  text-align: center;
+}
+
+/* 表内嵌入图片居中 */
+.vp-doc table th img {
+  display: inline-block;
+  margin: 0 auto 0 auto;
+}
+
+.vp-doc table tr,
+.vp-doc table th,
+.vp-doc table td {
+  border: 0 !important;
+  border-spacing: 0 !important;
+}
+
+
+/* 表内嵌入图片统一加圆角和间隔 */
+.vp-doc table img {
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+}
+
+
+/* 
+ * 仿 GitHub docs 的 ol 步骤样式
+ *  示例 https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
+ */
+ol:not(.no-styling) {
+  display: block;
+  list-style-type: decimal;
+  counter-reset: li;
+  list-style: none;
+  position: relative;
+  padding-left: 1.7rem;
+}
+
+ol:not(.no-styling)>li:before {
+  width: calc(1.5rem - 2px);
+  height: calc(1.5rem - 2px);
+  font-size: calc(1rem - 2px);
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  left: 0;
+  margin-top: 0.2rem;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 50%;
+  background-color: black;
+}
